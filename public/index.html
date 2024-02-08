@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Sockets</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css"/>
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+<script src="app.js"></script>
+
+</head>
+
+<body>
+    
+    <canvas id="tela"></canvas>
+
+    <script>
+        const socket = io.connect()
+
+        socket.on('resposta',()=>{
+            console.log('resposta recebida')
+        })
+
+        function enviar() {
+            socket.emit('mensagem')
+        }
+
+
+    </script>
+    
+
+
+</body>
+
+</html>
